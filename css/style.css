@@ -49,9 +49,12 @@ a {
 ------------------------------------------------------------*/
 header {
   background-image: url(../images/IMG_7182.jpg);
-  height: 500px;
+  height: 250px;
   background-size: cover;
   background-position: center center; }
+  @media (min-width: 769px) {
+    header {
+      height: 500px; } }
 
 /* main
 ------------------------------------------------------------*/
@@ -62,22 +65,21 @@ section {
     font-size: 3.2rem; }
   section .container {
     width: 90%;
-    padding: 20px 0; }
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column; }
     section .container .box-inner {
-      width: 100%;
-      float: left; }
+      width: 100%; }
       section .container .box-inner h3 {
         font-size: 2.5rem; }
-    section .container::after {
-      content: '';
-      display: block;
-      clear: both; }
 
 @media (min-width: 769px) {
-  section .container .box-inner {
-    width: 33.33333%;
-    padding: 0 5px;
-    box-sizing: border-box; } }
+  section .container {
+    flex-direction: row; }
+    section .container .box-inner {
+      width: 33.33333%;
+      padding: 0 5px;
+      box-sizing: border-box; } }
 /*contact
 ------------------------------------------------------------*/
 #contact h2 {

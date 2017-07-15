@@ -59,9 +59,13 @@ a {
 ------------------------------------------------------------*/
 header {
   background-image: url(../images/IMG_7182.jpg);
-  height: 500px;
+  height: 250px;
   background-size: cover;
   background-position: center center;
+  
+  @media (min-width: 769px){
+  height: 500px;
+  }
 }
 
 /* main
@@ -79,19 +83,16 @@ section {
         width: 90%;
         @extend .block-center;
         padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        
         .box-inner {
             width: 100%;
-            float: left;
             h3 {
                 @extend .abel;
                 font-size: 2.5rem;
                 @extend .uppercase;
             }
-        }
-        &::after {
-            content: '';
-            display: block;
-            clear: both;
         }
     }
 }
@@ -102,6 +103,8 @@ section {
   // Works
     section {
         .container {
+            flex-direction: row;
+            
             .box-inner {
                 width: (100% / 3);
                 padding: 0 5px;
